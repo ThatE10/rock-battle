@@ -28,13 +28,14 @@ class game():
         self.turn = 0 if self.turn else 1
 
 
-def player(board) -> (int, int):
+def player(board,turn=0) -> (int, int):
     awaiting_valid_response = True
     while awaiting_valid_response:
         # Prints graphics
         print("Your turn!")
         for index, rockpile_amt in enumerate(board):
-            print(f"[{index}]: {"#" * rockpile_amt}")
+            rocks = "#" * rockpile_amt
+            print(f"[{index}]: {rocks}")
             print()
 
         try:
