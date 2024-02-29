@@ -6,10 +6,12 @@ battle = game.game(starting_state=[0, 5, 5, 4,3])
 
 while not battle.gameover:
     print("Turn 0")
-    battle.play(bots.bot_1.bot(battle.board))
+    print(battle.board)
+    play_1 = bots.bot_1.bot(battle.board,turn=0)
+    battle.play(play_1)
 
     if not battle.gameover:
         print("Turn 1")
-        battle.play(bots.bot_2.bot(battle.board))
-
-    print(battle.board)
+        print(battle.board)
+        play_2 = bots.bot_2.bot(battle.board,turn=1)
+        battle.play(play_2)

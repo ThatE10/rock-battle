@@ -3,7 +3,7 @@ bot_name = "DESTROYER!"
 
 
 # Function to determine the bot's move based on the current board state
-def bot(board) -> (int, int):
+def bot(board,turn = 0) -> (int, int):
     """
     Determines the bot's move based on the current board state.
 
