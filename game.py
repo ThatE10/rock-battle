@@ -13,10 +13,11 @@ class game():
         rockpile_num, amount = play
 
         if rockpile_num >= len(self.board):
-            pass  # throw error
+            raise ValueError("Invalid rockpile number. Please choose a valid rockpile.")
 
-        if self.board[rockpile_num] < amount:
-            pass  # throw different error
+        if self.board[rockpile_num] < amount or amount <= 0:
+            raise ValueError("Not enough rocks in the chosen rockpile.")
+
 
         self.board[rockpile_num] -= amount
 
@@ -60,4 +61,3 @@ def player(board) -> (int, int):
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
             print("Please try again.")
-
